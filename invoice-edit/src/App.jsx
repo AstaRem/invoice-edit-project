@@ -11,7 +11,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/"          element={<Navigate to="/list" />} /> */}
+        <Route path="/"          element={<Navigate to="/list" />} />
         <Route path="/create"    element={<CreateInvoice />} />
         <Route path="/list"      element={<ListInvoices />} />
         <Route path="/view/:id"  element={<ViewInvoice />} />
