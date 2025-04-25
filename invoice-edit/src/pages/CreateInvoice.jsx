@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { createInv } from '../api/invoices';
 import { useNavigate } from 'react-router-dom';
 import InvoiceLayout from '../components/InvoiceLayout';
-// import './CreateInvoice.css';
+import './CreateInvoice.css';
 
 export default function CreateInvoice() {
   const [invoice, setInvoice] = useState(null);
@@ -83,12 +83,15 @@ export default function CreateInvoice() {
 
   return (
     <div className="create-page">
-      <InvoiceLayout invoice={invoice} editable={false} />
+      
       <div className="buttons">
         <button onClick={handleSave}>Išsaugoti</button>
         <button onClick={fetchExternal}>Atnaujinti</button>
         <button onClick={() => navigate('/list')}>Atšaukti</button>
       </div>
+
+
+      <InvoiceLayout invoice={invoice} editable={false} />
     </div>
   );
 }

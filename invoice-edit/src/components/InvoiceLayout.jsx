@@ -7,7 +7,7 @@ export default function InvoiceLayout({
     onChange = () => { }
 }) {
     // Helper to format an ISO date to YYYY‑MM‑DD
-    const fmt = iso => iso?.slice(0, 10) ?? '';
+    const fmt = iso => iso?.slice(0, 10) ?? ''; //if the left of coalescing operator ?? is null or undefined, returns what is on the right '' 
 
     // Calculate per‑line total
     const calcLineTotal = line => {

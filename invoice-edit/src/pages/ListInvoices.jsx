@@ -9,6 +9,10 @@ export default function ListInvoices() {
   const [msg, setMsg] = useState('');
   const navigate = useNavigate();
 
+      // Helper to format an ISO date to YYYY‑MM‑DD
+      const fmt = iso => iso?.slice(0, 10) ?? ''; //if the left of coalescing operator ?? is null or undefined, returns what is on the right '' 
+
+
   // Calculate total for a single invoice
   const calcTotal = invoice => {
     const sub = invoice.lines.reduce((sum, line) => {
@@ -79,7 +83,7 @@ export default function ListInvoices() {
           {list.map(inv => (
             <tr key={inv.id}>
               <td>{inv.number}</td>
-              <td>{inv.date}</td>
+              <td>{fmt(inv.date)}</td>
               <td>{calcTotal(inv).toFixed(2)}</td>
               <td className="actions">
                 <button onClick={() => navigate(`/view/${inv.id}`)}>
